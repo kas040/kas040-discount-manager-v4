@@ -25,7 +25,7 @@ export default function DiscountManager() {
   };
 
   return (
-    <Page title="Korting Beheer">
+    <Page title="Discount Run">
       <Layout>
         <Layout.Section>
           <Card>
