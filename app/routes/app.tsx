@@ -4,6 +4,7 @@ import { boundary } from "@shopify/shopify-app-remix/server";
 import { AppProvider } from "@shopify/shopify-app-remix/react";
 import { NavMenu } from "@shopify/app-bridge-react";
 import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
+import * as Polaris from "@shopify/polaris"; // Polaris Globaal Importeren
 
 import { authenticate } from "../shopify.server";
 
@@ -20,13 +21,27 @@ export default function App() {
 
   return (
     <AppProvider isEmbeddedApp apiKey={apiKey}>
-      <NavMenu>
-          <Link to="/app" rel="home">
-            Home
-          </Link>
-          <Link to="/app/discount-manager">Manager</Link>
-        </NavMenu>
-        <Outlet />
+      <Polaris.AppProvider i18n={{}}>
+        <Polaris.Frame>
+          <NavMenu>
+            <Link to="/app" rel="home">
+              Home
+            </Link>
+            <Link to="/app/discount-manager">Manager</Link>
+          </NavMenu>
+
+          <Polaris.Page title="Dashboard">
+            <Polaris.Card sectioned>
+              <p>Welkom bij de Discount Manager!</p>
+              <Polaris.Button onClick={() => alert("Polaris werkt!")}>
+                Test Polaris Button
+              </Polaris.Button>
+            </Polaris.Card>
+          </Polaris.Page>
+
+          <Outlet />
+        </Polaris.Frame>
+      </Polaris.AppProvider>
     </AppProvider>
   );
 }
