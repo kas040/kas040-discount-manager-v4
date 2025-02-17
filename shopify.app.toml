@@ -1,0 +1,40 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "f33b9801f22d1fcf4b12abbf5d282ad7"
+application_url = "https://achieving-paperback-speeds-executive.trycloudflare.com"
+embedded = true
+name = "kas040-discount-manager-v4"
+handle = "kas040-discount-manager-v4"
+
+[build]
+include_config_on_deploy = true
+dev_store_url = "red-devil-essentials-1-1.myshopify.com"
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://achieving-paperback-speeds-executive.trycloudflare.com/auth/callback",
+  "https://achieving-paperback-speeds-executive.trycloudflare.com/auth/shopify/callback",
+  "https://achieving-paperback-speeds-executive.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[web]
+port = 3_000
