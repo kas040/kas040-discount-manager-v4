@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "f33b9801f22d1fcf4b12abbf5d282ad7"
-application_url = "https://tennessee-boating-december-annotated.trycloudflare.com"
+application_url = "https://titans-change-lifestyle-gps.trycloudflare.com"
 embedded = true
 name = "kas040-discount-manager-v4"
 handle = "kas040-discount-manager-v4"
@@ -28,9 +28,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://tennessee-boating-december-annotated.trycloudflare.com/auth/callback",
-  "https://tennessee-boating-december-annotated.trycloudflare.com/auth/shopify/callback",
-  "https://tennessee-boating-december-annotated.trycloudflare.com/api/auth/callback"
+  "https://titans-change-lifestyle-gps.trycloudflare.com/auth/callback",
+  "https://titans-change-lifestyle-gps.trycloudflare.com/auth/shopify/callback",
+  "https://titans-change-lifestyle-gps.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
